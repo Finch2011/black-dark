@@ -1,5 +1,5 @@
 import React from "react";
-import "./register.scss";
+import "../authentication.scss";
 
 import { Link } from "react-router-dom";
 import Input from "@app/ui/components/input";
