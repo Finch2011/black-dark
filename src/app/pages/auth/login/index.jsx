@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../authentication.scss";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { InputContext } from "@app/context/InputContext";
+import emailjs from "@emailjs/browser"
 import Input from "@ui/components/input";
 
 export default function Login() {
+  useEffect(()=>{
+    emailjs.init({
+      publicKey: 'cBYh4_JDWUITDNyST',
+      limitRate: {
+        id: 'app',
+        throttle: 10000,
+      },
+    });
+  },[])
   const formInputs = [
     {
       id: 0,
@@ -26,11 +36,11 @@ export default function Login() {
     try{
       const response = await axios.get('http://localhost:3001/rigester')
       console.log(response.data);
+      emailjs.send("service_sz7lmj3", "template_5wqgv6m", {code: Math.floor(Math.random()*99999 ) + 10000});
     }catch(error){
       console.log(error.message)
     }
-  
-
+   
   };
 
   const {query : register} = useQuery({

@@ -12,6 +12,7 @@
     "json": "npx json-server ./src/backend/db.json --port 3001"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@tanstack/react-query": "^5.62.10",
     "axios": "^1.7.9",
     "json-server": "^1.0.0-beta.3",
