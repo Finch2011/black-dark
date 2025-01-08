@@ -1,11 +1,14 @@
 import React, { useState, useRef } from "react";
 import "../authentication.scss";
 import { Link } from "react-router-dom";
-
+import { useQuery } from "@tanstack/react-query";
+import {  toast , Bounce, ToastContainer } from 'react-toastify';
+import axios from "axios";
 const numberInputs = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
 
 export default function Verification() {
   const [values, setValues] = useState(["", "", "", "", ""]); // Track values of each input
+  const [code , setcode] = useState([])
   const inputRefs = useRef([]); // Store refs for each input element
 
   const handleChange = (e, index) => {
@@ -44,13 +47,58 @@ export default function Verification() {
       setValues(newValues);
     }
   };
+   code.map
+  const VerifyUser = async (e) => {
+    e.preventDefault();
+    const codeV = code[0]
+    if(codeV === e.target.value){
+      try{
+        const response = await axios.get('http://localhost:3001/verify')
+        setcode(response.data)
+        toast.success('🦄 Wow so easy!', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+          });
+        
+      }catch(error){
+        console.log(error.message)
+      }
+      }
+      else{
+        
+        toast.error('🦄 Wow so easy!', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+          });
+      }
+    }
+  
+  const {query : register} = useQuery({
+    queryKey : ["register"],
+    queryFn: VerifyUser
+  })
 
   return (
     <div className="wrapper">
+      <ToastContainer/>
       <div className="model">
         <img src="/assets/images/verification.png" alt="model sign up" />
       </div>
-      <form>
+      <form onSubmit={VerifyUser}>
         <h3>BLACK DARK</h3>
         <div className="details">
           <div className="box-container">
@@ -62,6 +110,7 @@ export default function Verification() {
                 value={values[index]}
                 maxLength="1"
                 ref={(el) => (inputRefs.current[index] = el)}
+                // onInput={(e) => VerifyUser(e)}
                 onChange={(e) => handleChange(e, index)}
                 onKeyDown={(e) => handleKeyDown(e, index)}
                 autoFocus={index === 0}
