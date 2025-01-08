@@ -2,12 +2,11 @@ import React from "react";
 import "../authentication.scss";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 import { InputContext } from "@app/context/InputContext";
 import Input from "@ui/components/input";
 
 export default function Login() {
-  const { value } = useContext(InputContext);
   const formInputs = [
     {
       id: 0,

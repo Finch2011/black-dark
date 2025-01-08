@@ -19,12 +19,10 @@ function App() {
     "/auth/forget-password",
   ];
   const hideNav = notAllowed.includes(location.pathname);
-  const queryClient = new QueryClient()
   return (
     <>
      <InputProvider>
       {!hideNav && <Navbar />}
-      <QueryClientProvider client={queryClient}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
@@ -32,7 +30,6 @@ function App() {
         <Route path="/auth/login" element={<Login />} />
         <Route path="/auth/verify" element={<Verficiation />} />
       </Routes>
-      </QueryClientProvider>
      </InputProvider>
     </>
   );
