@@ -1,13 +1,18 @@
-import React, { useState, createContext } from "react";
+import React, { useState } from 'react';
+import { createContext } from 'react';
 
-export const InputContext = createContext();
+export const AuthenticationContext = createContext();
 
-export default function InputProvider({ children }) {
-  const [value, setValue] = useState([]);
-
+export default function AuthenticationProvider({children}) {
+   const [username, setUsername] = useState("");
+   const [email, setEmail] = useState("");
+   const [password, setPassword] = useState("");
+   const [confirmPassword, setConfirmPassword] = useState("");
+   const [loginUsername, setLoginUsername] = useState("");
+   const [loginPassword, setLoginPassword] = useState("");
   return (
-    <InputContext.Provider value={{ value, setValue }}>
-      {children}
-    </InputContext.Provider>
-  );
+    <AuthenticationContext.Provider value={{username , setUsername , email , setEmail , password , setPassword , confirmPassword , setConfirmPassword , loginPassword , loginUsername , setLoginUsername , setLoginPassword  }}>
+        {children}
+    </AuthenticationContext.Provider>
+  )
 }

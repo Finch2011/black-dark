@@ -1,16 +1,17 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "../authentication.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import {  toast , Bounce, ToastContainer } from 'react-toastify';
+import { toast, Bounce, ToastContainer } from "react-toastify";
+import emailjs from "@emailjs/browser";
 import axios from "axios";
 const numberInputs = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
 
 export default function Verification() {
+  const [code, setcode] = useState(Math.floor(Math.random() * 99999) + 1000);
   const [values, setValues] = useState(["", "", "", "", ""]); // Track values of each input
-  const [code , setcode] = useState([])
   const inputRefs = useRef([]); // Store refs for each input element
-
+  const navigate = useNavigate();
   const handleChange = (e, index) => {
     const value = e.target.value;
     const newValues = [...values];
@@ -23,7 +24,23 @@ export default function Verification() {
       inputRefs.current[index + 1]?.focus();
     }
   };
-
+  // seting email
+  emailjs.init({
+    publicKey: "cBYh4_JDWUITDNyST",
+    limitRate: {
+      id: "app",
+      throttle: 1000000,
+    },
+  });
+  useEffect(() => {
+    if (localStorage.getItem("Verified") === null && localStorage.getItem("verify") === null) {
+      navigate("/auth/login");
+    } else if (localStorage.getItem("Verified") == "true") {
+      emailjs.send("service_sz7lmj3", "template_5wqgv6m", { code: code , email : localStorage.getItem("email")  });
+      localStorage.setItem("code", code);
+    }
+  }, []);
+  // end
   const handleKeyDown = (e, index) => {
     if (e.key === "Backspace" && values[index] === "") {
       // Focus previous input if backspace is pressed and the current input is empty
@@ -47,15 +64,11 @@ export default function Verification() {
       setValues(newValues);
     }
   };
-   code.map
+  code.map;
   const VerifyUser = async (e) => {
     e.preventDefault();
-    const codeV = code[0]
-    if(codeV === e.target.value){
-      try{
-        const response = await axios.get('http://localhost:3001/verify')
-        setcode(response.data)
-        toast.success('🦄 Wow so easy!', {
+    if ( localStorage.getItem("code") == values.join("")) {
+        toast.success("حساب کاربری با موفقیت تایید شد❤", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -65,36 +78,32 @@ export default function Verification() {
           progress: undefined,
           theme: "light",
           transition: Bounce,
-          });
-        
-      }catch(error){
-        console.log(error.message)
-      }
-      }
-      else{
-        
-        toast.error('🦄 Wow so easy!', {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-          transition: Bounce,
-          });
-      }
+          onClose : ()=> navigate("/")
+        });
+        localStorage.setItem("verify" , true)
+    } else {
+      toast.error("کد ئارد شده نانعتبر است🤦‍♂️", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
     }
-  
-  const {query : register} = useQuery({
-    queryKey : ["register"],
-    queryFn: VerifyUser
-  })
+  };
+
+  const { query: register } = useQuery({
+    queryKey: ["register"],
+    queryFn: VerifyUser,
+  });
 
   return (
     <div className="wrapper">
-      <ToastContainer/>
+      <ToastContainer />
       <div className="model">
         <img src="/assets/images/verification.png" alt="model sign up" />
       </div>
@@ -117,10 +126,7 @@ export default function Verification() {
               />
             ))}
           </div>
-          <button type="submit">
-            {" "}
-            تایید کد{" "}
-          </button>
+          <button type="submit"> تایید کد </button>
           <div className="row">
             <span className="countdown"> ارسال مجدد ۴:۵۹ </span>
             <Link to="/auth/login"> ویرایش ایمیل </Link>

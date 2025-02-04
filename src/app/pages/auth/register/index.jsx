@@ -1,81 +1,92 @@
-import React, { useContext } from "react";
-import "../authentication.scss";
-
-import axios from "axios";
-import { useMutation } from "@tanstack/react-query";
-
-import { InputContext } from "@app/context/InputContext";
-
-import { Link } from "react-router-dom";
+import React , { useContext, useEffect } from "react";
+import "../authentication.scss"
+import { ToastContainer , toast , Bounce } from "react-toastify";
+import { Link , useNavigate } from "react-router-dom";
 import Input from "@app/ui/components/input";
 
+import {AuthenticationContext} from '@app/context/InputContext';
+import { baseUrl } from "@app/helpers/vb";
+import axios from "axios";
+
+import { useMutation } from "@tanstack/react-query";
+
 export default function Register() {
-  const { value } = useContext(InputContext);
-
-  const formInputs = [
-    {
-      id: 0,
-      type: "text",
-      placeholder: "نام کاربری",
-    },
-
-    {
-      id: 1,
-      type: "text",
-      placeholder: "شماره موبایل",
-    },
-
-    {
-      id: 2,
-      type: "password",
-      placeholder: "رمز عبور",
-    },
-    {
-      id: 3,
-      type: "password",
-      placeholder: "تکرار رمز عبور",
-    },
-  ];
-
-  const registerUser = async (event) => {
-    event.preventDefault();
-
-    try{
-      const response = await axios.post('http://localhost:3001/rigester' , {
-        id : Math.floor(Math.random()*10000000) ,
-        username : value[0],
-        phone_number : value[1],
-        password : value[2],
-      })
-      console.log(response.data);
-    }catch(error){
-      console.log(error.message)
+  const {username , email , password , confirmPassword} = useContext(AuthenticationContext)
+  const formType = "register"; 
+  const navigate = useNavigate()
+  useEffect(()=>{
+     if(localStorage.getItem("Register") !== null ){
+       navigate("/auth/login")
+     }
+    },[localStorage.getItem("Register")])
+  const registerUser =  async (e) => {
+    e.preventDefault();
+    if(username !== "" && email !== "" && password !== "" ){
+       if(password === confirmPassword && password.length >= 8){
+        try {
+          const response = await axios.post(`${baseUrl}/register` , {
+            "username" : username,
+            "email" : email,
+            "password" : password
+          });
+          toast.success('درحال ثبت نام 😃', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+            onClose : () => navigate("/auth/login")
+            });
+            localStorage.setItem("Register", true);
+        } catch (error) {
+          console.error(error.message)
+        }
+    }else{
+      toast.error(' رمز عبور با تکرار آن مطابقت ندارد یا کمتر از 8 حرف است', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
     }
-  
+      }else{
+    toast.error('لطفا اطلاعات خواسته شده را وارد کنید', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+      });
+  }
+}
 
-  };
-
-  const {mutation : register} = useMutation({
-    mutationKey : ["register"],
-    mutationFn: registerUser
+  const {mutate : register} = useMutation({
+    mutationFn : registerUser,
   })
 
   return (
     <div className="wrapper">
+      <ToastContainer/>
       <div className="model">
         <img src="/assets/images/register.png" alt="model sign up" />
       </div>
-      <form onSubmit={registerUser}>
+      <form onSubmit={register}>
         <h3> BLACK DARK </h3>
         <div className="details">
-          {formInputs.map((detail) => (
-            <Input
-              id={detail.id}
-              key={detail.id}
-              type={detail.type}
-              placeholder={detail.placeholder}
-            />
-          ))}
+          <Input formType={formType}/>
           <button type="submit">ثبت نام</button>
         </div>
         <Link to="/auth/login"> حساب کاربری دارید؟ ورود </Link>

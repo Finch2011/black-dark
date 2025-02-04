@@ -1,73 +1,91 @@
-import React, { useEffect } from "react";
-import "../authentication.scss";
-import { useQuery } from "@tanstack/react-query";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import { InputContext } from "@app/context/InputContext";
-import emailjs from "@emailjs/browser"
+import React, { useState, useContext, useEffect } from "react";
 import Input from "@ui/components/input";
+import { Link , useNavigate } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import { baseUrl } from "@app/helpers/vb";
+import { AuthenticationContext } from "@app/context/InputContext";
+import { ToastContainer, toast, Bounce } from "react-toastify";
 
 export default function Login() {
+  const navigate = useNavigate()
+  const formType = "login";
+  const { loginPassword, loginUsername } = useContext(AuthenticationContext);
   useEffect(()=>{
-    emailjs.init({
-      publicKey: 'cBYh4_JDWUITDNyST',
-      limitRate: {
-        id: 'app',
-        throttle: 10000,
-      },
-    });
-  },[])
-  const formInputs = [
-    {
-      id: 0,
-      type: "text",
-      placeholder: "نام کاربری",
-    },
-    {
-      id: 1,
-      type: "password",
-      placeholder: "رمز عبور",
-    },
-  ];
+   if(localStorage.getItem("Login") !== null ){
+     navigate("/")
+   }
+  },[localStorage.getItem("Login")])
+  const loginData = async (e) => {
+    e.preventDefault();
+    if (loginPassword !== "" && loginUsername !== "") {
+    try {
+      const respans = await axios.get(`${baseUrl}/register`);
+      const user = respans.data.find(
+        (user) =>
+          user.username === loginUsername && user.password === loginPassword
+      );
+      if (user) {
+        toast.success("در حال ورود 😍", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+          onClose : () => navigate("/auth/verify")
+        });
+        localStorage.setItem("Verified" , true )
+        localStorage.setItem("Login" , true )
+        localStorage.setItem("email" , user.email)
+      }else{
 
-  const LoginUser = async (event) => {
-    event.preventDefault();
-
-    try{
-      const response = await axios.get('http://localhost:3001/rigester')
-      console.log(response.data);
-      emailjs.send("service_sz7lmj3", "template_5wqgv6m", {code: Math.floor(Math.random()*99999 ) + 10000});
-    }catch(error){
-      console.log(error.message)
+        toast.error("کاربر یافت نشد 😢 ", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      }
+    } catch (error) {}
+    }else{
+      toast.error('لطفا اطلاعات خواسته شده را وارد کنید', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+            });
     }
-   
   };
-
-  const {query : register} = useQuery({
-    queryKey : ["register"],
-    queryFn: LoginUser
-  })
-
+  const { data: login } = useQuery({
+    queryKey: ["login"],
+    queryFn: loginData,
+  });
   return (
     <div className="wrapper">
+      <ToastContainer />
       <div className="model">
         <img src="/assets/images/login.png" alt="model login" />
       </div>
 
-      <form onSubmit={LoginUser}>
+      <form onSubmit={loginData}>
         <h3>BLACK DARK</h3>
-
         <div className="details">
-          {formInputs.map((input) => (
-            <Input
-              key={input.id}
-              type={input.type}
-              placeholder={input.placeholder}
-            />
-          ))}
-
+          <Input formType={formType} />
           <button type="submit">ورود</button>
-
           <div className="row">
             <Link to="/auth/register">ثبت نام</Link>
             <Link to="/auth/forget-password">فراموشی رمز عبور</Link>

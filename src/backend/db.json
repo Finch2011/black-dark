@@ -1,36 +1,31 @@
 {
-  "rigester": [
+  "register": [
     {
-      "id": "83d6",
-      "username": "Mohamadreza",
-      "phone_number": "09964512303",
-      "password": "5050505"
+      "id": "fb29",
+      "username": "test",
+      "email": "test@gmail.com",
+      "password": "test"
     },
     {
-      "id": "964.0952067081976",
-      "username": "Mohamadreza",
-      "phone_number": "09964512303",
-      "password": "5050505"
+      "id": "775b",
+      "username": "Mohamad",
+      "email": "M@gmail.com",
+      "password": "M1234"
     },
     {
-      "id": "53401",
-      "username": "Mohamadreza",
-      "phone_number": "09964512303",
-      "password": "5050505"
+      "id": "299f",
+      "username": "moh",
+      "email": "moh@gmail.com",
+      "password": "12345678"
     },
     {
-      "id": 1650948,
-      "username": "Mohamadreza",
-      "phone_number": "09110654343",
-      "password": "M505"
+      "id": "e97a",
+      "username": "test2",
+      "email": "mozhgan1019@gmail.com",
+      "password": "M12345678"
     }
   ],
   "verify": [
-    {
-      "code1": "12345",
-      "code2": "23456",
-      "code3": "34567",
-      "code4": "55555"
-    }
+    {}
   ]
 }
