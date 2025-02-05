@@ -33,9 +33,9 @@ export default function Verification() {
     },
   });
   useEffect(() => {
-    if (localStorage.getItem("Verified") === null && localStorage.getItem("verify") === null) {
+    if (localStorage.getItem("Verified") === null && localStorage.getItem("verify") === null && localStorage.getItem("email") === null) {
       navigate("/auth/login");
-    } else if (localStorage.getItem("Verified") == "true") {
+    } else if (localStorage.getItem("Verified") == "true")  {
       emailjs.send("service_sz7lmj3", "template_5wqgv6m", { code: code , email : localStorage.getItem("email")  });
       localStorage.setItem("code", code);
     }

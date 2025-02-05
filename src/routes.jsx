@@ -8,6 +8,7 @@ import Register from "@pages/auth/register";
 import Login from "@app/pages/auth/login";
 import Verficiation from "@app/pages/auth/verification";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Recovery from "@app/pages/auth/Password recovery";
 
 function App() {
   const location = useLocation();
@@ -16,7 +17,7 @@ function App() {
     "/auth/register",
     "/auth/login",
     "/auth/verify",
-    "/auth/forget-password",
+    "/auth/R-password",
   ];
   const hideNav = notAllowed.includes(location.pathname);
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/auth/register" element={<Register />} />
         <Route path="/auth/login" element={<Login />} />
         <Route path="/auth/verify" element={<Verficiation />} />
+        <Route path="/auth/R-password" element={<Recovery />} />
       </Routes>
      </InputProvider>
     </>

@@ -10,8 +10,9 @@ export default function AuthenticationProvider({children}) {
    const [confirmPassword, setConfirmPassword] = useState("");
    const [loginUsername, setLoginUsername] = useState("");
    const [loginPassword, setLoginPassword] = useState("");
+   const [Rusername, setRusername] = useState("");
   return (
-    <AuthenticationContext.Provider value={{username , setUsername , email , setEmail , password , setPassword , confirmPassword , setConfirmPassword , loginPassword , loginUsername , setLoginUsername , setLoginPassword  }}>
+    <AuthenticationContext.Provider value={{username , setUsername , email , setEmail , password , setPassword , confirmPassword , setConfirmPassword , loginPassword , loginUsername , setLoginUsername , setLoginPassword ,Rusername, setRusername  }}>
         {children}
     </AuthenticationContext.Provider>
   )

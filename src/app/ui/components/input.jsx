@@ -10,6 +10,7 @@ export default function Input({ formType }) {
 
   const {loginUsername, setLoginUsername} = useContext(AuthenticationContext);
   const {loginPassword, setLoginPassword} = useContext(AuthenticationContext);
+  const {Rusername, setRusername} = useContext(AuthenticationContext);
 
   return (
 
@@ -20,9 +21,12 @@ export default function Input({ formType }) {
         <input type="password" placeholder="رمز عبور" value={password} onInput={(e) => setPassword(e.target.value)} />
         <input  type="password" placeholder=" تکرار رمز عبور" value={confirmPassword} onInput={(e) => setConfirmPassword(e.target.value)}  />
       </> : <>
-        <input type="text" placeholder="نام کاربری" value={loginUsername} onInput={(e) => setLoginUsername(e.target.value)} />
+      </> && formType === "r-password" ? <>
+      <input type="email" placeholder="ایمیل" value={Rusername} onInput={(e) => setRusername(e.target.value)} />
+      </> : <></> && formType === "login" ? <>
+      <input type="text" placeholder="نام کاربری" value={loginUsername} onInput={(e) => setLoginUsername(e.target.value)} />
         <input type="password" placeholder="رمز عبور" value={loginPassword} onInput={(e) => setLoginPassword(e.target.value)} />
-      </>}
+      </> : <></>}
     </>
   );
 }
