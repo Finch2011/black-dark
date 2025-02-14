@@ -85,9 +85,9 @@ export default function Login() {
         <h3>BLACK DARK</h3>
         <div className="details">
           <Input formType={formType} />
-          <button type="submit">ورود</button>
+          <button type="submit" className="formBtns">ورود</button>
           <div className="row">
-            <Link to="/auth/register">ثبت نام</Link>
+            <Link to="/auth/register" >ثبت نام</Link>
             <Link to="/auth/R-password">فراموشی رمز عبور</Link>
           </div>
         </div>

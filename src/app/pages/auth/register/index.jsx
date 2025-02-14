@@ -87,7 +87,7 @@ export default function Register() {
         <h3> BLACK DARK </h3>
         <div className="details">
           <Input formType={formType}/>
-          <button type="submit">ثبت نام</button>
+          <button type="submit" className="formBtns">ثبت نام</button>
         </div>
         <Link to="/auth/login"> حساب کاربری دارید؟ ورود </Link>
       </form>

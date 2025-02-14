@@ -3,7 +3,7 @@
     {
       "id": "fb29",
       "username": "test",
-      "email": "test@gmail.com",
+      "email": "mozhgan1019@gmail.com",
       "password": "test"
     },
     {
@@ -26,6 +26,8 @@
     }
   ],
   "verify": [
-    {}
+    {
+      "id": "63ac"
+    }
   ]
 }

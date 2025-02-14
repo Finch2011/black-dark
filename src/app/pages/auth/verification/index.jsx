@@ -1,10 +1,12 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import "../authentication.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { toast, Bounce, ToastContainer } from "react-toastify";
 import emailjs from "@emailjs/browser";
 import axios from "axios";
+import { AuthenticationContext } from "@app/context/InputContext";
+import { baseUrl } from "@app/helpers/vb";
 const numberInputs = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
 
 export default function Verification() {
@@ -12,6 +14,7 @@ export default function Verification() {
   const [values, setValues] = useState(["", "", "", "", ""]); // Track values of each input
   const inputRefs = useRef([]); // Store refs for each input element
   const navigate = useNavigate();
+  const { loginPassword, loginUsername } = useContext(AuthenticationContext);
   const handleChange = (e, index) => {
     const value = e.target.value;
     const newValues = [...values];
@@ -32,14 +35,14 @@ export default function Verification() {
       throttle: 1000000,
     },
   });
-  useEffect(() => {
-    if (localStorage.getItem("Verified") === null && localStorage.getItem("verify") === null && localStorage.getItem("email") === null) {
-      navigate("/auth/login");
-    } else if (localStorage.getItem("Verified") == "true")  {
-      emailjs.send("service_sz7lmj3", "template_5wqgv6m", { code: code , email : localStorage.getItem("email")  });
-      localStorage.setItem("code", code);
-    }
-  }, []);
+  //  useEffect(() => {
+  //    if (localStorage.getItem("Verified") === null && localStorage.getItem("verify") === null && localStorage.getItem("email") === null) {
+  //      navigate("/auth/login");
+  //    } else if (localStorage.getItem("Verified") == "true")  {
+  //      emailjs.send("service_sz7lmj3", "template_5wqgv6m", { code: code , email : localStorage.getItem("email")  });
+  //      localStorage.setItem("code", code);
+  //   }
+  // }, []);
   // end
   const handleKeyDown = (e, index) => {
     if (e.key === "Backspace" && values[index] === "") {
@@ -95,12 +98,32 @@ export default function Verification() {
       });
     }
   };
+       const [edit , setEdit] = useState(true)
+       const [emailnow , setemailnow] = useState("")
+       const data = async() => {
+           setEdit(true)
+        try{
+        const respans = await axios.get(`${baseUrl}/register`);
+        const user = respans.data.find(
+          (user) =>
+            user.username === loginUsername && user.password === loginPassword
+        );
+        if(user){
+             const respans =  await axios.patch(`${baseUrl}/register/${user.id}`,{
+              email : emailnow
+            })
+            console.log(respans.data)
+           }
+        
+        }catch(error){
+          console.error(error)
+        }
+       }
 
   const { query: register } = useQuery({
     queryKey: ["register"],
     queryFn: VerifyUser,
   });
-
   return (
     <div className="wrapper">
       <ToastContainer />
@@ -109,7 +132,7 @@ export default function Verification() {
       </div>
       <form onSubmit={VerifyUser}>
         <h3>BLACK DARK</h3>
-        <div className="details">
+        {edit ?<div className="details">
           <div className="box-container">
             {numberInputs.map((number, index) => (
               <input
@@ -126,12 +149,12 @@ export default function Verification() {
               />
             ))}
           </div>
-          <button type="submit"> تایید کد </button>
+          <button type="submit" className="formBtns"> تایید کد </button>
           <div className="row">
             <span className="countdown"> ارسال مجدد ۴:۵۹ </span>
-            <Link to="/auth/login"> ویرایش ایمیل </Link>
+            <button className="editEmail" onClick={()=> setEdit(false)}>ویرایش ایمیل</button>
           </div>
-        </div>
+        </div> :<div className="details"><input value={emailnow} onInput={(e)=> setemailnow(e.target.value)} type="email" placeholder="ایمیل جدید را وارد کنید !"/> <button type="button" onClick={data} className="formBtns">ارسال ایمیل</button></div>}
       </form>
     </div>
   );
