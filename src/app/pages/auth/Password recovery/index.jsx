@@ -60,38 +60,3 @@ export default function Recovery() {
     </div>
   );
 }
-  //   const respans = await axios.get(`${baseUrl}/register`);
-  //   const user = respans.data.find(
-  //     (user) =>
-  //       user.username === loginUsername && user.password === loginPassword
-  //   );
-  //   if (user) {
-  //     toast.success("در حال ورود 😍", {
-  //       position: "top-right",
-  //       autoClose: 5000,
-  //       hideProgressBar: false,
-  //       closeOnClick: false,
-  //       pauseOnHover: true,
-  //       draggable: true,
-  //       progress: undefined,
-  //       theme: "light",
-  //       transition: Bounce,
-  //       onClose : () => navigate("/auth/verify")
-  //     });
-  //     localStorage.setItem("Verified" , true )
-  //     localStorage.setItem("Login" , true )
-  
-  //   }else{
-  
-  //     toast.error("کاربر یافت نشد 😢 ", {
-  //       position: "top-right",
-  //       autoClose: 5000,
-  //       hideProgressBar: false,
-  //       closeOnClick: false,
-  //       pauseOnHover: true,
-  //       draggable: true,
-  //       progress: undefined,
-  //       theme: "light",
-  //       transition: Bounce,
-  //     });
-  //   }

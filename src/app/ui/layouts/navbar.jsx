@@ -37,6 +37,7 @@ export default function navbar() {
         <div className="indicator">2</div>
       </button>
       <button className="profile-me">پروفایل من</button>
+      
     </nav>
   );
 }

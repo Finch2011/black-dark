@@ -35,14 +35,14 @@ export default function Verification() {
       throttle: 1000000,
     },
   });
-  //  useEffect(() => {
-  //    if (localStorage.getItem("Verified") === null && localStorage.getItem("verify") === null && localStorage.getItem("email") === null) {
-  //      navigate("/auth/login");
-  //    } else if (localStorage.getItem("Verified") == "true")  {
-  //      emailjs.send("service_sz7lmj3", "template_5wqgv6m", { code: code , email : localStorage.getItem("email")  });
-  //      localStorage.setItem("code", code);
-  //   }
-  // }, []);
+   useEffect(() => {
+     if (localStorage.getItem("Verified") === null && localStorage.getItem("verify") === null && localStorage.getItem("email") === null) {
+       navigate("/auth/login");
+     } else if (localStorage.getItem("Verified") == "true")  {
+       emailjs.send("service_sz7lmj3", "template_5wqgv6m", { code: code , email : localStorage.getItem("email")  });
+       localStorage.setItem("code", code);
+    }
+  }, [localStorage.getItem("email")]);
   // end
   const handleKeyDown = (e, index) => {
     if (e.key === "Backspace" && values[index] === "") {
@@ -113,6 +113,7 @@ export default function Verification() {
               email : emailnow
             })
             console.log(respans.data)
+            localStorage.setItem("email" , emailnow)
            }
         
         }catch(error){
