@@ -149,3 +149,15 @@
     font-size: 32px;
    }
 }
+.main-offer{
+  margin-top: 1rem;
+  h3{
+    text-align: center;
+  }
+  .flex-product{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}

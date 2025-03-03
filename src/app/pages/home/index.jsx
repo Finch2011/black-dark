@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./home.scss";
+import Products from "./components/products";
 
 export default function Home() {
     return(
@@ -13,7 +14,7 @@ export default function Home() {
             </div>
             <div className="text-hakopian">
             <h1>کت شلوار های هاکوپیان</h1>
-            <p>انواع کت شلوار های مردانه و زنانه در بلک دارک<img src="assets/images/arrow.svg" alt="" /></p>
+            <p>انواع کت شلوار های مردانه و زنانه در بلک دارک<img src="/assets/images/arrow.svg" alt="" /></p>
             </div>
         <div className="position-w">
          <div className="button-vuesax">
@@ -35,6 +36,12 @@ export default function Home() {
             <img className="position-womenprson" src="./assets/images/women.png" alt="" />
             <img className="position-women" src="./assets/images/women.svg" alt="" />
             <img className="position-men" src="./assets/images/men.svg" alt="" />
+        </div>
+        <div className="main-offer">
+            <h3>فروش ویژه فصل</h3>
+            <div className="flex-product">
+            <Products/>
+            </div>
         </div>
         </>
     )

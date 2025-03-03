@@ -1,0 +1,49 @@
+@use "/src/sass/base/colors";
+@use "/src/sass/base/fonts";
+@use "/src/sass/utils/mixins" as *;
+.main-product{
+    width: 240px;
+    height: 334px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 2px 2px 10px gray ;
+    position: relative;
+    img{
+        border-radius: inherit;
+    }
+    .bg-arrow{
+        position: absolute;
+        bottom: 0;
+    }
+    .arrow{
+    position: absolute;
+    bottom : 0;
+}
+.info{
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    border-radius: inherit;
+    width: 240px;
+    height: 90px;
+    background-color: #1a1a1ad2;
+    h4{
+     margin-top: 10px;
+     margin-right: 10px;
+    }
+    .prices{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 20px;
+        margin-right: 35px;
+        .s1{
+          text-decoration: line-through;
+          color: gray;
+        }
+        .s2{
+            font-size: 1.3rem;
+        }
+    }
+   }
+}
