@@ -2,18 +2,19 @@
 @use "/src/sass/base/fonts";
 @use "/src/sass/utils/mixins" as *;
 
-.offer-container{
-    @include flex(column , center , center);
-    float: left;
-    width: max-content;
-    color: #fff;
-    height: max-content;
-    padding: 10px;
-    border-radius: 4px;
-    background-color: #1a1a1a7a;
-    span{
-        font-family: fonts.$en;
-        font-weight: 300;
-    }
-
+.offer-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  @include flex(column, center, center);
+  width: max-content;
+  color: #fff;
+  height: max-content;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #1a1a1a7a;
+  span {
+    font-family: fonts.$en;
+    font-weight: 300;
+  }
 }

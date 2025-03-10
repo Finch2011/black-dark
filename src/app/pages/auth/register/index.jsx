@@ -27,7 +27,8 @@ export default function Register() {
           const response = await axios.post(`${baseUrl}/register` , {
             "username" : username,
             "email" : email,
-            "password" : password
+            "password" : password,
+            "admin" : false
           });
           toast.success('درحال ثبت نام 😃', {
             position: "top-right",

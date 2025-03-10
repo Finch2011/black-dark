@@ -9,6 +9,8 @@ import Login from "@app/pages/auth/login";
 import Verficiation from "@app/pages/auth/verification";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Recovery from "@app/pages/auth/Password recovery";
+import Speshailoffers from "@app/pages/Products/speshail-offers";
+import User from "@app/pages/profil/user";
 
 function App() {
   const location = useLocation();
@@ -31,6 +33,8 @@ function App() {
         <Route path="/auth/login" element={<Login />} />
         <Route path="/auth/verify" element={<Verficiation />} />
         <Route path="/auth/R-password" element={<Recovery />} />
+        <Route path="/products/speshial-offers/:slug" element={<Speshailoffers />} />
+        <Route path="/profil/user" element={<User />} />
       </Routes>
      </InputProvider>
     </>

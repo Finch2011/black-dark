@@ -1,33 +1,84 @@
 {
   "register": [
     {
-      "id": "fb29",
-      "username": "test",
-      "email": "mohamed.reza.8728@gmail.com",
-      "password": "test"
-    },
-    {
-      "id": "775b",
-      "username": "Mohamad",
-      "email": "M@gmail.com",
-      "password": "M1234"
-    },
-    {
       "id": "299f",
       "username": "moh",
+      "admin": true,
       "email": "moh@gmail.com",
       "password": "12345678"
     },
     {
       "id": "e97a",
       "username": "test2",
+      "admin": false,
       "email": "mozhgan1019@gmail.com",
       "password": "M12345678"
+    },
+    {
+      "id": "9da6",
+      "username": "Mohammad",
+      "admin": false,
+      "email": "mozhgan1019@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "72f4",
+      "username": "Mohammad",
+      "email": "m@gmail.com",
+      "password": "12345678",
+      "admin": false
     }
   ],
-  "verify": [
+  "Speshial-offers": [
     {
-      "id": "63ac"
+      "id": "0",
+      "slug": "Burberry",
+      "title": "کت بربری Burberry مدل A8 ",
+      "Ogprice": "2,000,000",
+      "Fainalprice": "1,400,000",
+      "image": "/assets/images/Model1.png",
+      "offervalue": 40,
+      "addres": "/products/speshial-offers/Burberry"
+    },
+    {
+      "id": "1",
+      "slug": "Brooks",
+      "title": "کت شلوار  بروکس Brooks  ",
+      "Ogprice": "3,000,000",
+      "Fainalprice": "1,500,000",
+      "image": "/assets/images/Model2.png",
+      "offervalue": 30,
+      "addres": "/products/speshial-offers/Brooks"
+    },
+    {
+      "id": "2",
+      "slug": "Canali",
+      "title": "کت شلوارکانالی 320 Canali",
+      "Ogprice": "6,800,000",
+      "Fainalprice": "4,800,000",
+      "image": "/assets/images/Model3.png",
+      "offervalue": 15,
+      "addres": "/products/speshial-offers/Canali"
+    },
+    {
+      "id": "3",
+      "slug": "SP",
+      "title": "کت زنانه اس پی ایتالیا SP Italy",
+      "Ogprice": "7,000,000",
+      "Fainalprice": "6,500,000",
+      "image": "/assets/images/Model4.png",
+      "offervalue": 20,
+      "addres": "/products/speshial-offers/SP"
+    },
+    {
+      "id": "4",
+      "slug": "vstay",
+      "title": "کت چرمی بلک مدل وسطای vstay",
+      "Ogprice": "12,500,000",
+      "Fainalprice": "8,600,000",
+      "image": "/assets/images/Model5.png",
+      "offervalue": 10,
+      "addres": "/products/speshial-offers/vstay"
     }
   ]
 }

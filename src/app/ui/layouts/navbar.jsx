@@ -4,6 +4,7 @@ import "./navbar.scss";
 import { Link } from "react-router-dom";
 
 export default function navbar() {
+  const LocalStorage = localStorage.getItem("verify");
   const links = [
     {
       id: 0,
@@ -70,7 +71,7 @@ export default function navbar() {
           سبد خرید
           <div className="indicator">2</div>
         </button>
-        <button className="profile-me">پروفایل من</button>
+       <Link to={!LocalStorage ? "/auth/login" : "/profil/user"}><button className="profile-me" >{LocalStorage ? "پروفایل من" : "ثبت نام / ورود"}</button></Link> 
       </nav>
       <div className="nav2">
         <div className="input">
