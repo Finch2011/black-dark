@@ -42,6 +42,25 @@
       "image": "/assets/images/model-3.png",
       "offer": 18,
       "address": "/products/special-offers/canali"
+    },
+    {
+      "id": "b2a4",
+      "title": "عنوان",
+      "enTitle": "Title",
+      "brand": "برند ",
+      "sizeSM": "on",
+      "sizeS": null,
+      "sizeM": null,
+      "sizeL": "on",
+      "sizeXL": null,
+      "colorB": "on",
+      "colorBe": "on",
+      "colorR": null,
+      "colorG": "on",
+      "colorP": null,
+      "originalPrice": "2000000",
+      "offerPrice": "",
+      "percentage": "10"
     }
   ]
 }

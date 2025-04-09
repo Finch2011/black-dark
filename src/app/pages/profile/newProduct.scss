@@ -1,0 +1,43 @@
+@use '/src/sass/utils/mixins' as *;
+
+form{
+    @include flex(row , center , center);
+    margin-top: 1rem;
+    width: 100%;
+    height: 600px;
+
+    .rightSide , .leftSide{
+        width: 50%;
+        height: inherit;
+    }
+
+    .leftSide {
+        fieldset{
+            width: 95%;
+            height: 50%;
+        }
+    }
+
+
+    fieldset{
+        @include flex(column , center , center);
+        gap: 1rem;
+        margin: 1rem;
+        padding: 0.5rem;
+
+        .newPrInput{
+            width: 100%;
+            height: 30px;
+            border: none;
+            border-right: 1px solid #222;
+            border-bottom: 1px solid #222;
+            outline: none;
+            padding: 0.2rem 0.5rem;
+        }
+
+    }
+
+    legend{
+        padding: 0.5rem;
+    }
+}
