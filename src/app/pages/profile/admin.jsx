@@ -19,7 +19,7 @@ export default function Admin() {
   return (
     <div>
         <h1>پنل ادمین {localStorage.getItem('username')}</h1>
-        <Link to='/profile/admin/new-product'> ایجاد محصول جدید </Link>
+        <h2><Link to='/profile/admin/new-product'> ایجاد محصول جدید </Link></h2>
         <button style={{color : 'red'}} onClick={logOut}> خروج از حساب </button>
     </div>
   )

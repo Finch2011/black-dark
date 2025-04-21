@@ -18,7 +18,7 @@ export default function SpecialSale() {
       finalPrice: "1,416,000",
       image: Model1,
       offer : 27,
-      address : "/products/special-offers/burberry"
+      address : "/products/productDetails/good"
     }, {
       id: 1,
       title: "کت شلوار  بروکس Brooks",
