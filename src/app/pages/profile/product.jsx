@@ -7,7 +7,7 @@ export default function Productss() {
     const [queryValue, setQueryValue] = useState("")
     const queryFn = async () => {
         try {
-            const { data } = await axios.get(`${baseUrl}/special-offers?cat=${queryValue}`)
+            const { data } = await axios.get(`${baseUrl}/special-offers`)
             return data
         } catch (error) {
             console.log(error.massage)
@@ -18,31 +18,41 @@ export default function Productss() {
         queryKey: ["products", queryValue],
         queryFn
     })
-    const handelcat = (cat) => {
-        setQueryValue(cat)
+    const handelmap = (e) =>{
+    setQueryValue(e)
     }
+    const filtercat = products?.filter((product) => product.cat === queryValue)
+    console.log(queryValue)
+    const cat =  [...new Set( products?.map(product => product.cat))]
     return (
         <div className='container' style={{ display: 'flex', flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
             <ul style={{ width: "600px", display: 'flex', justifyContent: "space-evenly", alignItems: "center", marginTop: "1rem", cursor: "pointer" }}>
-                <li onClick={(e) => handelcat(e.target.textContent)}>پیراهن</li>
-                <li onClick={(e) => handelcat(e.target.textContent)}>تیشرت</li>
-                <li onClick={(e) => handelcat(e.target.textContent)}>شلوار</li>
-                <li onClick={(e) => handelcat(e.target.textContent)}>کت شلوار</li>
-                <li onClick={(e) => handelcat(e.target.textContent)}>ژاکت</li>
-                <li onClick={(e) => handelcat(e.target.textContent)}>کاپشن</li>
+             
+             {cat.map((cat , index)=>(
+                <li onClick={(e) => handelmap(e.target.textContent)} key={index}>{cat}</li>
+             ))}
             </ul>
             <section style={{ margin: " 3rem" }}>
-                {products && products.map((product) => {
+                {queryValue !== "" ? filtercat?.map((product) => (
                     <>
-                        <h3>{ product.title}</h3>
-                        <p>{product.percentage}</p>
-                        <p>{product.enTitle}</p>
-                        <p>{product.brand}</p>
-                        <p>{product.originalPrice}</p>
-                        <p>{product.offerPrice}</p>
+                        <h3 key={1}>{ product.title}</h3>
+                         <p key={12}>{product.percentage}</p>
+                         <p key={123}>{product.enTitle}</p>
+                         <p key={1234}>{product.brand}</p>
+                         <p key={12345}>{product.originalPrice}</p>
+                         <p key={123456}>{product.offerPrice}</p>
                     </>
-
-                })}
+                ))  : products?.map((product) => (
+                    <>
+                        <h3 key={1}>{ product.title}</h3>
+                         <p key={12}>{product.percentage}</p>
+                         <p key={123}>{product.enTitle}</p>
+                         <p key={1234}>{product.brand}</p>
+                         <p key={12345}>{product.originalPrice}</p>
+                         <p key={123456}>{product.offerPrice}</p>
+                    </>
+                ))}
+                {}
             </section>
         </div>
     )

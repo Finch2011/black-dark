@@ -22,6 +22,7 @@ function App() {
     "/auth/login",
     "/auth/verify",
     "/auth/forget-password",
+    "/products"
   ];
   const hideNav = notAllowed.includes(location.pathname);
 
@@ -39,7 +40,7 @@ function App() {
         <Route path="/profile/admin" element={<Admin />} />
         <Route path="/profile/admin/new-product" element={<NewProduct />} />
         <Route path="/products/productdetails/:slug" element={<Productdetlais />} />
-        <Route path="/productss" element={<Productss />} />
+        <Route path="/products" element={<Productss />} />
       </Routes>
     </>
   );
