@@ -29,6 +29,32 @@
       "admin": false
     }
   ],
+  "cat" : [
+     {
+      "id" : "5f56" ,
+      "cat" : "پیراهن"
+     },
+     {
+      "id" : "5f564" ,
+      "cat" : "تیشرت"
+     },
+     {
+      "id" : "5f566" ,
+      "cat" : "شلوار"
+     },
+     {
+      "id" : "5f568" ,
+      "cat" : "کت و شلوار"
+     },
+     {
+      "id" : "5f5634" ,
+      "cat" : "کت"
+     },
+     {
+      "id" : "5f4354" ,
+      "cat" : "کاپشن"
+     }
+  ],
   "special-offers": [
     
     {
@@ -50,7 +76,8 @@
       "originalPrice": "8,000,000",
       "offerPrice": "6,400,000",
       "percentage": "20",
-      "slug" : "Burberry"
+      "slug" : "Burberry",
+      "cat" : "پیراهن"
     }, {
       "id": 1,
       "title": "کت شلوار  بروکس Brooks",
@@ -70,7 +97,9 @@
       "originalPrice": "10,000,000",
       "offerPrice": "9,500,000",
       "percentage": "15",
-      "slug" : "Brooks"
+      "slug" : "Brooks",
+      "cat" : "کت و شلوار"
+
     }, {
       "id": 2,
       "title": "کت شلوارکانالی 320 Canali ",
@@ -90,7 +119,9 @@
       "originalPrice": "15,000,000",
       "offerPrice": "13,500,000",
       "percentage": "10",
-      "slug" : "Canali"
+      "slug" : "Canali",
+      "cat" : "کت و شلوار"
+
     },
     {
       "id": 3,
@@ -111,7 +142,9 @@
       "originalPrice": "5,000,000",
       "offerPrice": "4,750,000",
       "percentage": "5",
-      "slug" : "sp"
+      "slug" : "sp",
+      "cat" : "کت"
+
     },
     {
       "id": 4,
@@ -132,7 +165,9 @@
       "originalPrice": "20,000,000",
       "offerPrice": "14,000,000",
       "percentage": "30",
-      "slug" : "vstay"
+      "slug" : "vstay",
+      "cat" : "کت"
+
     }
   ]
 }

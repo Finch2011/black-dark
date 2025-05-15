@@ -9,7 +9,6 @@ export default function SpecialSale() {
   const queryFn = async () =>{
     try {
       const {data} = await axios.get(`${baseUrl}/special-offers`)
-      console.log(data)
        return data
     } catch (error) {
       console.error(error.massage)
@@ -33,6 +32,7 @@ export default function SpecialSale() {
         offer={product.percentage}
         />
       ))}
+      
     </div>
   )
 }

@@ -2,14 +2,25 @@ import React, { useState } from 'react';
 import './newProduct.scss';
 import axios from 'axios';
 import { baseUrl } from '@app/helpers/variables';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 
 export default function NewProduct() {
     const [imagePreview, setImagePreview] = useState("");
     const [imageSrc, setImageSrc] = useState("");
+    const [inputValue , setInputvalue] = useState("")
+    const [maincat , setMaincat] = useState([])
 
+    const queryFn = async() =>{
+        try {
+          const {data} = await axios.get(`${baseUrl}/cat`)
+          setMaincat(data)
+        } catch (error) {
+            console.error(error
+
+            )
+        }
+    }
     const handleImageChange = (event) => {
-
         console.log(event.target.files[0])
 
         const file = event.target.files[0];
@@ -57,7 +68,10 @@ export default function NewProduct() {
             alert("خطا در ایجاد محصول!");
         }
     });
-
+     const {data} = useQuery({
+         queryKey : ["cat"],
+        queryFn 
+     })
     const handleSubmit = (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
@@ -73,6 +87,7 @@ export default function NewProduct() {
                         <input className="newPrInput" name='title' type="text" placeholder='عنوان محصول شما' />
                         <input className="newPrInput" name='en-title' type="text" placeholder='عنوان انگیلیسی محصول شما' />
                         <input className="newPrInput" name='brand' type="text" placeholder='برند مصحول شما' />
+                        <input onChange={(e) => setInputvalue(e.target.value)} className="newPrInput" name='cat' type="text" placeholder='دسته بندی' />
                     </fieldset>
                     <fieldset>
                         <legend> رنگ و سایزبندی </legend>
@@ -117,6 +132,7 @@ export default function NewProduct() {
                 </section>
                 {isError && <div className="error-message">{error.message}</div>}
             </form>
+       
         </>
     );
 }
