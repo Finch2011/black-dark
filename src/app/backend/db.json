@@ -29,40 +29,39 @@
       "admin": false
     }
   ],
-  "cat" : [
-     {
-      "id" : "5f56" ,
-      "cat" : "پیراهن"
-     },
-     {
-      "id" : "5f564" ,
-      "cat" : "تیشرت"
-     },
-     {
-      "id" : "5f566" ,
-      "cat" : "شلوار"
-     },
-     {
-      "id" : "5f568" ,
-      "cat" : "کت و شلوار"
-     },
-     {
-      "id" : "5f5634" ,
-      "cat" : "کت"
-     },
-     {
-      "id" : "5f4354" ,
-      "cat" : "کاپشن"
-     }
+  "categories": [
+    {
+      "id": "3725",
+      "category": "پیراهن"
+    },
+    {
+      "id": "220e",
+      "category": "تیشرت"
+    },
+    {
+      "id": "107c",
+      "category": "شلوار"
+    },
+    {
+      "id": "8d59",
+      "category": "کت و شلوار"
+    },
+    {
+      "id": "5c44",
+      "category": "مردانه"
+    },
+    {
+      "id": "3843",
+      "category": "زنانه"
+    }
   ],
   "special-offers": [
-    
     {
       "id": 0,
       "title": "کت بربری Burberry مدل A8",
-      "enTitle" : "Burberry" ,
-     "brand": "Zara",
-     "image" : "https://i.ibb.co/whx7SFqq/model-1.png",
+      "enTitle": "Burberry",
+      "brand": "Zara",
+      "image": "https://i.ibb.co/whx7SFqq/model-1.png",
       "sizeSM": null,
       "sizeS": null,
       "sizeM": "on",
@@ -76,14 +75,15 @@
       "originalPrice": "8,000,000",
       "offerPrice": "6,400,000",
       "percentage": "20",
-      "slug" : "Burberry",
-      "cat" : "پیراهن"
-    }, {
+      "slug": "Burberry",
+      "categories": "پیراهن"
+    },
+    {
       "id": 1,
       "title": "کت شلوار  بروکس Brooks",
-       "enTitle" : "Brooks" ,
-       "brand": "Zara",
-      "image" : "https://i.ibb.co/2YNNmXXm/model-2.png",
+      "enTitle": "Brooks",
+      "brand": "Zara",
+      "image": "https://i.ibb.co/2YNNmXXm/model-2.png",
       "sizeSM": null,
       "sizeS": null,
       "sizeM": "on",
@@ -97,15 +97,15 @@
       "originalPrice": "10,000,000",
       "offerPrice": "9,500,000",
       "percentage": "15",
-      "slug" : "Brooks",
-      "cat" : "کت و شلوار"
-
-    }, {
+      "slug": "Brooks",
+      "categories": "کت و شلوار"
+    },
+    {
       "id": 2,
       "title": "کت شلوارکانالی 320 Canali ",
-      "enTitle" : "Canali" ,
-     "brand": "Zara",
-     "image" : "https://i.ibb.co/VW6yJdvv/model-3.png",
+      "enTitle": "Canali",
+      "brand": "Zara",
+      "image": "https://i.ibb.co/VW6yJdvv/model-3.png",
       "sizeSM": null,
       "sizeS": null,
       "sizeM": "on",
@@ -119,16 +119,15 @@
       "originalPrice": "15,000,000",
       "offerPrice": "13,500,000",
       "percentage": "10",
-      "slug" : "Canali",
-      "cat" : "کت و شلوار"
-
+      "slug": "Canali",
+      "categories": "کت و شلوار"
     },
     {
       "id": 3,
       "title": "کت زنانه اس پی ایتالیا SP Italy",
-      "enTitle" : "SP Italy" ,
+      "enTitle": "SP Italy",
       "brand": "Zara",
-      "image" : "https://i.ibb.co/Jj2qvyH5/model-4.png",
+      "image": "https://i.ibb.co/Jj2qvyH5/model-4.png",
       "sizeSM": null,
       "sizeS": null,
       "sizeM": "on",
@@ -142,16 +141,15 @@
       "originalPrice": "5,000,000",
       "offerPrice": "4,750,000",
       "percentage": "5",
-      "slug" : "sp",
-      "cat" : "کت"
-
+      "slug": "sp",
+      "categories": "کت"
     },
     {
       "id": 4,
       "title": "کت چرمی بلک مدل وسطای vstay",
-      "enTitle" : "vstay" ,
+      "enTitle": "vstay",
       "brand": "Zara",
-      "image" : "https://i.ibb.co/C5hKXrm3/model-5.png",
+      "image": "https://i.ibb.co/C5hKXrm3/model-5.png",
       "sizeSM": null,
       "sizeS": null,
       "sizeM": "on",
@@ -165,9 +163,30 @@
       "originalPrice": "20,000,000",
       "offerPrice": "14,000,000",
       "percentage": "30",
-      "slug" : "vstay",
-      "cat" : "کت"
-
+      "slug": "vstay",
+      "categories": "کت"
+    },
+    {
+      "id": "252b",
+      "title": "شلوار لی",
+      "enTitle": "le",
+      "brand": "zara",
+      "sizeSM": true,
+      "sizeS": true,
+      "sizeM": true,
+      "sizeL": true,
+      "sizeXL": true,
+      "colorB": true,
+      "colorBe": true,
+      "colorR": true,
+      "colorG": true,
+      "colorP": true,
+      "originalPrice": "1,000,000",
+      "offerPrice": "800,000",
+      "percentage": "20",
+      "imageSrc": "",
+      "category": "زنانه",
+      "slug": "le"
     }
   ]
 }
