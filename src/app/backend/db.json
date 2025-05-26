@@ -49,29 +49,27 @@
     {
       "id": "5c44",
       "category": "مردانه"
-    },
-    {
-      "id": "3843",
-      "category": "زنانه"
     }
   ],
   "special-offers": [
     {
-      "id": 0,
+      "id": "0",
       "title": "کت بربری Burberry مدل A8",
       "enTitle": "Burberry",
       "brand": "Zara",
       "image": "https://i.ibb.co/whx7SFqq/model-1.png",
-      "sizeSM": null,
-      "sizeS": null,
-      "sizeM": "on",
-      "sizeL": "on",
-      "sizeXL": "on",
-      "colorB": "on",
-      "colorBe": null,
-      "colorR": null,
-      "colorG": "on",
-      "colorP": null,
+      "Sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "Colors": [
+        "on",
+        null,
+        null,
+        "on",
+        null
+      ],
       "originalPrice": "8,000,000",
       "offerPrice": "6,400,000",
       "percentage": "20",
@@ -79,21 +77,25 @@
       "categories": "پیراهن"
     },
     {
-      "id": 1,
+      "id": "1",
       "title": "کت شلوار  بروکس Brooks",
       "enTitle": "Brooks",
       "brand": "Zara",
       "image": "https://i.ibb.co/2YNNmXXm/model-2.png",
-      "sizeSM": null,
-      "sizeS": null,
-      "sizeM": "on",
-      "sizeL": "on",
-      "sizeXL": "on",
-      "colorB": "on",
-      "colorBe": null,
-      "colorR": null,
-      "colorG": "on",
-      "colorP": null,
+      "Sizes": [
+        "S",
+        "XL",
+        "L",
+        "M",
+        "SM"
+      ],
+      "Colors": [
+        "on",
+        null,
+        null,
+        "on",
+        null
+      ],
       "originalPrice": "10,000,000",
       "offerPrice": "9,500,000",
       "percentage": "15",
@@ -101,21 +103,23 @@
       "categories": "کت و شلوار"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "کت شلوارکانالی 320 Canali ",
       "enTitle": "Canali",
       "brand": "Zara",
       "image": "https://i.ibb.co/VW6yJdvv/model-3.png",
-      "sizeSM": null,
-      "sizeS": null,
-      "sizeM": "on",
-      "sizeL": "on",
-      "sizeXL": "on",
-      "colorB": "on",
-      "colorBe": null,
-      "colorR": null,
-      "colorG": "on",
-      "colorP": null,
+      "Sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "Colors": [
+        "on",
+        null,
+        null,
+        "on",
+        null
+      ],
       "originalPrice": "15,000,000",
       "offerPrice": "13,500,000",
       "percentage": "10",
@@ -123,21 +127,23 @@
       "categories": "کت و شلوار"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "کت زنانه اس پی ایتالیا SP Italy",
       "enTitle": "SP Italy",
       "brand": "Zara",
       "image": "https://i.ibb.co/Jj2qvyH5/model-4.png",
-      "sizeSM": null,
-      "sizeS": null,
-      "sizeM": "on",
-      "sizeL": "on",
-      "sizeXL": "on",
-      "colorB": "on",
-      "colorBe": null,
-      "colorR": null,
-      "colorG": "on",
-      "colorP": null,
+     "Sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "Colors": [
+        "on",
+        null,
+        null,
+        "on",
+        null
+      ],
       "originalPrice": "5,000,000",
       "offerPrice": "4,750,000",
       "percentage": "5",
@@ -145,21 +151,23 @@
       "categories": "کت"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "کت چرمی بلک مدل وسطای vstay",
       "enTitle": "vstay",
       "brand": "Zara",
       "image": "https://i.ibb.co/C5hKXrm3/model-5.png",
-      "sizeSM": null,
-      "sizeS": null,
-      "sizeM": "on",
-      "sizeL": "on",
-      "sizeXL": "on",
-      "colorB": "on",
-      "colorBe": null,
-      "colorR": null,
-      "colorG": "on",
-      "colorP": null,
+     "Sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "Colors": [
+        "on",
+        null,
+        null,
+        "on",
+        null
+      ],
       "originalPrice": "20,000,000",
       "offerPrice": "14,000,000",
       "percentage": "30",
@@ -167,26 +175,52 @@
       "categories": "کت"
     },
     {
-      "id": "252b",
-      "title": "شلوار لی",
-      "enTitle": "le",
+      "id": "fa6d",
+      "title": "کت و شلوار ایتالیایی",
+      "enTitle": "suits italya",
       "brand": "zara",
-      "sizeSM": true,
-      "sizeS": true,
-      "sizeM": true,
-      "sizeL": true,
-      "sizeXL": true,
-      "colorB": true,
-      "colorBe": true,
-      "colorR": true,
-      "colorG": true,
-      "colorP": true,
+     "Sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "Colors": [
+        "on",
+        null,
+        null,
+        "on",
+        null
+      ],
+      "originalPrice": "10,000,000",
+      "offerPrice": "8,000,000",
+      "percentage": "20",
+      "imageSrc": "",
+      "category": "کت و شلوار",
+      "slug": "suits italya"
+    },
+    {
+      "id": "b22b",
+      "title": "تیشرت اسپرت مدل 101 رز گلد زارا",
+      "enTitle": "T-shirt 101 model rozy gold ",
+      "brand": "zara",
+      "Sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "Colors": [
+        {
+          "letter" : "B" ,
+          "text" : "Blue" ,
+          "color" : "blue" 
+        }
+      ],
       "originalPrice": "1,000,000",
       "offerPrice": "800,000",
       "percentage": "20",
       "imageSrc": "",
-      "category": "زنانه",
-      "slug": "le"
+      "category": "تیشرت",
+      "slug": "Tshirt"
     }
   ]
 }

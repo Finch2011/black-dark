@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, lazy } from 'react';
 import './newProduct.scss';
 import axios from 'axios';
 import { baseUrl , IMAGEBBKEY , IMAGEBBURL } from '@app/helpers/variables';
@@ -27,6 +27,7 @@ export default function NewProduct() {
         { id: 'colorG', label: 'Green', name: 'colorG' },
         { id: 'colorP', label: 'Pink', name: 'colorP' }
     ];
+    const allSizes = [ 'SM' , 'S' , 'M' , 'L' , 'XL' ]
 
     const handleImageChange = async (e) => {
         const file = e.target.files[0];
@@ -73,19 +74,20 @@ export default function NewProduct() {
         if (selectedCategory && isNewCategory) {
             await axios.post(`${baseUrl}/categories`, { category: selectedCategory });
         }
+        const selectedSize = allSizes.filter(size => formData.get(`size${size}`))
 
         const productData = {
             title: formData.get('title'),
             enTitle: formData.get('en-title'),
             brand: formData.get('brand'),
-            ...sizes.reduce((acc, size) => {
-                acc[size.name] = formData.get(size.name) === 'on';
-                return acc;
-            }, {}),
-            ...colors.reduce((acc, color) => {
-                acc[color.name] = formData.get(color.name) === 'on';
-                return acc;
-            }, {}),
+            Sizes : selectedSize ,
+            Colors : [
+                formData.get('colorB'),
+                formData.get('colorBe'),
+                formData.get('colorP'),
+                formData.get('colorG'),
+                formData.get('colorR'),
+            ],
             originalPrice: formData.get('originalPrice'),
             offerPrice: formData.get('offerPrice'),
             percentage: formData.get('percentage'),
@@ -180,11 +182,10 @@ export default function NewProduct() {
                         <div className="sizes">
                             <label className="section-label">سایزهای موجود محصول</label>
                             <div className="sizes">
-                                {sizes.map(size => (
-                                    <div className="checkbox-item" key={size.id}>
-                                        <input type="checkbox" name={size.name} id={size.id} />
-                                        <label htmlFor={size.id}>{size.label}</label>
-                                    </div>
+                                {allSizes.map((size)=>(
+                                <label htmlFor={size} key={size}> 
+                                {size}<input type="checkbox" name={`size${size}`} id="" />
+                                 </label>
                                 ))}
                             </div>
                         </div>

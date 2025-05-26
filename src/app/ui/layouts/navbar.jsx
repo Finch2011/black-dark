@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./navbar.scss";
 
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { baseUrl } from "@app/helpers/variables";
 
 export default function navbar() {
 
@@ -9,8 +11,17 @@ export default function navbar() {
   const adminState = localStorage.getItem('admin');
 
   const navigate = useNavigate()
+  const [links , setLinks] = useState([])
+  useEffect(()=>{
+     const handelLinks = async() =>{
+     
+      const res = await axios.get(`${baseUrl}/categories`)
+      setLinks(res.data)
+     }
+     handelLinks();
+  },[])
 
-  const links = [
+  const link = [
     {
       id: 0,
       title: "صفحه اصلی",
@@ -32,12 +43,11 @@ export default function navbar() {
       url: "/blog",
     },
   ];
-
   return (
     <>
       <nav>
         <ul>
-          {links.map((link) => (
+          {link.map((link) => (
             <li key={link.id}>
               <Link to={link.url}> {link.title} </Link>
             </li>
@@ -58,12 +68,11 @@ export default function navbar() {
           <input type="text" name="search-all" id="searchTheWholeSite" placeholder="جستجو" />
         </div>
         <ul>
-          <li> پیراهن </li>
-          <li> تیشرت </li>
-          <li> شلوار </li>
-          <li> کت و شلوار </li>
-          <li> ژاکت </li>
-          <li> کاپشن </li>
+          {links.map((Links) => (
+            <li key={Links.id}>
+              <Link style={{color: "black"}}> {Links.category} </Link>
+            </li>
+          ))}
         </ul>
         <h3>BLACK DARK</h3>
       </div>

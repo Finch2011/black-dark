@@ -53,10 +53,10 @@
   
     .sizes, .colors {
       display: flex;
+      align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
       margin-bottom: 1.5rem;
-      align-items: center;
   
       label {
         display: flex;
