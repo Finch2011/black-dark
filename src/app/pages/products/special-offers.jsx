@@ -61,7 +61,7 @@ export default function SpecialOffers() {
                             </ul>
                             <ul className="colors-picker">
                                 {product.Colors?.map((color, index) => (
-                                    <li onClick={() => handleColor(index)} style={selectedColor === index?{backgroundColor : color.color} : {}} className={selectedColor === index ? 'selectedColor' : ''} key={index}> {selectedColor === index? color.text : color.letter} </li>
+                                    <li onClick={() => handleColor(index)} style={selectedColor === index?{backgroundColor : color.color} : {}} className={selectedColor === index ? 'selectedColor' : 'mainClassColor'} key={index}> {selectedColor === index? color.text : color.letter} </li>
                                 ))}
                             </ul>
                             <div className="row">
@@ -70,7 +70,7 @@ export default function SpecialOffers() {
 
                                 </div>
                             </div>
-                            <button> افزودن به سبد خرید </button>
+                            <button className='buyingButton'> افزودن به سبد خرید </button>
                         </section>
                         <section className="more-details"></section>
                     </section>

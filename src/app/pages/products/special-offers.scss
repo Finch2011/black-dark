@@ -40,6 +40,11 @@
         font-size: 1rem;
         font-weight: 400;
     }
+    .brand{
+        font-family: fonts.$en;
+        font-size: 30px;
+        font-weight: 400
+    }
 
     .sizes-chooser {
         @include flex(row, center, center);
@@ -100,6 +105,20 @@
             @include flex(row, center, center);
             width: 128px;
             border: 1px solid #171717;
+            color: #fff;
         }
+        .mainClassColor{
+            border: 1px solid #171717;
+            padding: 1rem;
+        }
+    }
+    .buyingButton{
+        width: 200px;
+        height: 50px;
+        border-radius: 10px;
+        border: none;
+        background-color: colors.$info;
+        font-family: fonts.$semi-bold;
+        
     }
 }

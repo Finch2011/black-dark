@@ -3,4 +3,7 @@
 .products-details {
     @include flex(row, space-between, center);
     margin: 1rem 0;
+    width: 100%;
+    height: 30%;
+    overflow-x: scroll;
 }

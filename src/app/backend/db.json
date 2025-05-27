@@ -64,11 +64,11 @@
         "L"
       ],
       "Colors": [
-        "on",
-        null,
-        null,
-        "on",
-        null
+        {
+          "letter" : "B" ,
+          "text" : "Blue" ,
+          "color" : "blue" 
+        }
       ],
       "originalPrice": "8,000,000",
       "offerPrice": "6,400,000",
@@ -90,11 +90,11 @@
         "SM"
       ],
       "Colors": [
-        "on",
-        null,
-        null,
-        "on",
-        null
+        {
+          "letter" : "B" ,
+          "text" : "Blue" ,
+          "color" : "blue" 
+        }
       ],
       "originalPrice": "10,000,000",
       "offerPrice": "9,500,000",
@@ -114,11 +114,11 @@
         "L"
       ],
       "Colors": [
-        "on",
-        null,
-        null,
-        "on",
-        null
+        {
+          "letter" : "B" ,
+          "text" : "Blue" ,
+          "color" : "blue" 
+        }
       ],
       "originalPrice": "15,000,000",
       "offerPrice": "13,500,000",
@@ -138,11 +138,18 @@
         "L"
       ],
       "Colors": [
-        "on",
-        null,
-        null,
-        "on",
-        null
+        {
+          "letter" : "B" ,
+          "text" : "Blue" ,
+          "color" : "blue" 
+        }
+        ,
+        {
+          "letter" : "G" ,
+          "text" : "Green" ,
+          "color" : "Green" 
+        }
+        
       ],
       "originalPrice": "5,000,000",
       "offerPrice": "4,750,000",
@@ -162,11 +169,11 @@
         "L"
       ],
       "Colors": [
-        "on",
-        null,
-        null,
-        "on",
-        null
+        {
+          "letter" : "B" ,
+          "text" : "Blue" ,
+          "color" : "blue" 
+        }
       ],
       "originalPrice": "20,000,000",
       "offerPrice": "14,000,000",
@@ -185,11 +192,11 @@
         "L"
       ],
       "Colors": [
-        "on",
-        null,
-        null,
-        "on",
-        null
+        {
+          "letter" : "B" ,
+          "text" : "Blue" ,
+          "color" : "blue" 
+        }
       ],
       "originalPrice": "10,000,000",
       "offerPrice": "8,000,000",
