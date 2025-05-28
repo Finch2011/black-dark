@@ -58,18 +58,47 @@
       "enTitle": "Burberry",
       "brand": "Zara",
       "image": "https://i.ibb.co/whx7SFqq/model-1.png",
-      "Sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "Colors": [
-        {
-          "letter" : "B" ,
-          "text" : "Blue" ,
-          "color" : "blue" 
-        }
-      ],
+      "images" : [
+        "https://i.ibb.co/Jj2qvyH5/model-4.png",
+         "https://i.ibb.co/Jj2qvyH5/model-4.png",
+         "https://i.ibb.co/Jj2qvyH5/model-4.png",
+         "https://i.ibb.co/Jj2qvyH5/model-4.png"
+     ],
+    "Sizes": [
+     "S",
+     "M",
+     "L",
+     "XS",
+     "2XL",
+     "3XL"
+     ],
+     "Colors": [
+       {
+         "letter" : "B" ,
+         "text" : "Blue" ,
+         "color" : "#BDC7E1" 
+       },
+       {
+         "letter" : "B",
+         "text" : "Beige" ,
+         "color" : "#EBE9DA"
+       },
+       {
+         "letter" : "R",
+         "text" : "Red" ,
+         "color" : "#A97676"
+       },
+       {
+         "letter" : "P",
+         "text" : "Pink" ,
+         "color" : "#EBDAE7"
+       },
+       {
+         "letter" : "G",
+         "text" : "Green" ,
+         "color" : "#87AA93"
+       }
+     ],
       "originalPrice": "8,000,000",
       "offerPrice": "6,400,000",
       "percentage": "20",
@@ -82,20 +111,47 @@
       "enTitle": "Brooks",
       "brand": "Zara",
       "image": "https://i.ibb.co/2YNNmXXm/model-2.png",
-      "Sizes": [
-        "S",
-        "XL",
-        "L",
-        "M",
-        "SM"
-      ],
-      "Colors": [
-        {
-          "letter" : "B" ,
-          "text" : "Blue" ,
-          "color" : "blue" 
-        }
-      ],
+      "images" : [
+        "https://i.ibb.co/Jj2qvyH5/model-4.png",
+         "https://i.ibb.co/Jj2qvyH5/model-4.png",
+         "https://i.ibb.co/Jj2qvyH5/model-4.png",
+         "https://i.ibb.co/Jj2qvyH5/model-4.png"
+     ],
+    "Sizes": [
+     "S",
+     "M",
+     "L",
+     "XS",
+     "2XL",
+     "3XL"
+     ],
+     "Colors": [
+       {
+         "letter" : "B" ,
+         "text" : "Blue" ,
+         "color" : "#BDC7E1" 
+       },
+       {
+         "letter" : "B",
+         "text" : "Beige" ,
+         "color" : "#EBE9DA"
+       },
+       {
+         "letter" : "R",
+         "text" : "Red" ,
+         "color" : "#A97676"
+       },
+       {
+         "letter" : "P",
+         "text" : "Pink" ,
+         "color" : "#EBDAE7"
+       },
+       {
+         "letter" : "G",
+         "text" : "Green" ,
+         "color" : "#87AA93"
+       }
+     ],
       "originalPrice": "10,000,000",
       "offerPrice": "9,500,000",
       "percentage": "15",
@@ -108,18 +164,47 @@
       "enTitle": "Canali",
       "brand": "Zara",
       "image": "https://i.ibb.co/VW6yJdvv/model-3.png",
-      "Sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "Colors": [
-        {
-          "letter" : "B" ,
-          "text" : "Blue" ,
-          "color" : "blue" 
-        }
-      ],
+      "images" : [
+        "https://i.ibb.co/Jj2qvyH5/model-4.png",
+         "https://i.ibb.co/Jj2qvyH5/model-4.png",
+         "https://i.ibb.co/Jj2qvyH5/model-4.png",
+         "https://i.ibb.co/Jj2qvyH5/model-4.png"
+     ],
+    "Sizes": [
+     "S",
+     "M",
+     "L",
+     "XS",
+     "2XL",
+     "3XL"
+     ],
+     "Colors": [
+       {
+         "letter" : "B" ,
+         "text" : "Blue" ,
+         "color" : "#BDC7E1" 
+       },
+       {
+         "letter" : "B",
+         "text" : "Beige" ,
+         "color" : "#EBE9DA"
+       },
+       {
+         "letter" : "R",
+         "text" : "Red" ,
+         "color" : "#A97676"
+       },
+       {
+         "letter" : "P",
+         "text" : "Pink" ,
+         "color" : "#EBDAE7"
+       },
+       {
+         "letter" : "G",
+         "text" : "Green" ,
+         "color" : "#87AA93"
+       }
+     ],
       "originalPrice": "15,000,000",
       "offerPrice": "13,500,000",
       "percentage": "10",
@@ -132,25 +217,47 @@
       "enTitle": "SP Italy",
       "brand": "Zara",
       "image": "https://i.ibb.co/Jj2qvyH5/model-4.png",
-     "Sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "Colors": [
-        {
-          "letter" : "B" ,
-          "text" : "Blue" ,
-          "color" : "blue" 
-        }
-        ,
-        {
-          "letter" : "G" ,
-          "text" : "Green" ,
-          "color" : "Green" 
-        }
-        
-      ],
+      "images" : [
+        "https://i.ibb.co/Jj2qvyH5/model-4.png",
+         "https://i.ibb.co/Jj2qvyH5/model-4.png",
+         "https://i.ibb.co/Jj2qvyH5/model-4.png",
+         "https://i.ibb.co/Jj2qvyH5/model-4.png"
+     ],
+    "Sizes": [
+     "S",
+     "M",
+     "L",
+     "XS",
+     "2XL",
+     "3XL"
+     ],
+     "Colors": [
+       {
+         "letter" : "B" ,
+         "text" : "Blue" ,
+         "color" : "#BDC7E1" 
+       },
+       {
+         "letter" : "B",
+         "text" : "Beige" ,
+         "color" : "#EBE9DA"
+       },
+       {
+         "letter" : "R",
+         "text" : "Red" ,
+         "color" : "#A97676"
+       },
+       {
+         "letter" : "P",
+         "text" : "Pink" ,
+         "color" : "#EBDAE7"
+       },
+       {
+         "letter" : "G",
+         "text" : "Green" ,
+         "color" : "#87AA93"
+       }
+     ],
       "originalPrice": "5,000,000",
       "offerPrice": "4,750,000",
       "percentage": "5",
@@ -162,17 +269,46 @@
       "title": "کت چرمی بلک مدل وسطای vstay",
       "enTitle": "vstay",
       "brand": "Zara",
-      "image": "https://i.ibb.co/C5hKXrm3/model-5.png",
+      "image": "https://i.ibb.co/2YNNmXXm/model-2.png",
+      "images" : [
+         "https://i.ibb.co/Jj2qvyH5/model-4.png",
+          "https://i.ibb.co/Jj2qvyH5/model-4.png",
+          "https://i.ibb.co/Jj2qvyH5/model-4.png",
+          "https://i.ibb.co/Jj2qvyH5/model-4.png"
+      ],
      "Sizes": [
-        "S",
-        "M",
-        "L"
+      "S",
+      "M",
+      "L",
+      "XS",
+      "2XL",
+      "3XL"
       ],
       "Colors": [
         {
           "letter" : "B" ,
           "text" : "Blue" ,
-          "color" : "blue" 
+          "color" : "#BDC7E1" 
+        },
+        {
+          "letter" : "B",
+          "text" : "Beige" ,
+          "color" : "#EBE9DA"
+        },
+        {
+          "letter" : "R",
+          "text" : "Red" ,
+          "color" : "#A97676"
+        },
+        {
+          "letter" : "P",
+          "text" : "Pink" ,
+          "color" : "#EBDAE7"
+        },
+        {
+          "letter" : "G",
+          "text" : "Green" ,
+          "color" : "#87AA93"
         }
       ],
       "originalPrice": "20,000,000",
@@ -186,18 +322,47 @@
       "title": "کت و شلوار ایتالیایی",
       "enTitle": "suits italya",
       "brand": "zara",
-     "Sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "Colors": [
-        {
-          "letter" : "B" ,
-          "text" : "Blue" ,
-          "color" : "blue" 
-        }
-      ],
+      "images" : [
+        "https://i.ibb.co/Jj2qvyH5/model-4.png",
+         "https://i.ibb.co/Jj2qvyH5/model-4.png",
+         "https://i.ibb.co/Jj2qvyH5/model-4.png",
+         "https://i.ibb.co/Jj2qvyH5/model-4.png"
+     ],
+    "Sizes": [
+     "S",
+     "M",
+     "L",
+     "XS",
+     "2XL",
+     "3XL"
+     ],
+     "Colors": [
+       {
+         "letter" : "B" ,
+         "text" : "Blue" ,
+         "color" : "#BDC7E1" 
+       },
+       {
+         "letter" : "B",
+         "text" : "Beige" ,
+         "color" : "#EBE9DA"
+       },
+       {
+         "letter" : "R",
+         "text" : "Red" ,
+         "color" : "#A97676"
+       },
+       {
+         "letter" : "P",
+         "text" : "Pink" ,
+         "color" : "#EBDAE7"
+       },
+       {
+         "letter" : "G",
+         "text" : "Green" ,
+         "color" : "#87AA93"
+       }
+     ],
       "originalPrice": "10,000,000",
       "offerPrice": "8,000,000",
       "percentage": "20",
@@ -210,18 +375,47 @@
       "title": "تیشرت اسپرت مدل 101 رز گلد زارا",
       "enTitle": "T-shirt 101 model rozy gold ",
       "brand": "zara",
-      "Sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "Colors": [
-        {
-          "letter" : "B" ,
-          "text" : "Blue" ,
-          "color" : "blue" 
-        }
-      ],
+      "images" : [
+        "https://i.ibb.co/Jj2qvyH5/model-4.png",
+         "https://i.ibb.co/Jj2qvyH5/model-4.png",
+         "https://i.ibb.co/Jj2qvyH5/model-4.png",
+         "https://i.ibb.co/Jj2qvyH5/model-4.png"
+     ],
+    "Sizes": [
+     "S",
+     "M",
+     "L",
+     "XS",
+     "2XL",
+     "3XL"
+     ],
+     "Colors": [
+       {
+         "letter" : "B" ,
+         "text" : "Blue" ,
+         "color" : "#BDC7E1" 
+       },
+       {
+         "letter" : "B",
+         "text" : "Beige" ,
+         "color" : "#EBE9DA"
+       },
+       {
+         "letter" : "R",
+         "text" : "Red" ,
+         "color" : "#A97676"
+       },
+       {
+         "letter" : "P",
+         "text" : "Pink" ,
+         "color" : "#EBDAE7"
+       },
+       {
+         "letter" : "G",
+         "text" : "Green" ,
+         "color" : "#87AA93"
+       }
+     ],
       "originalPrice": "1,000,000",
       "offerPrice": "800,000",
       "percentage": "20",

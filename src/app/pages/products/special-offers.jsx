@@ -28,6 +28,7 @@ export default function SpecialOffers() {
 
     const [selectedSize, setSelectedSize] = useState(null);
     const [selectedColor, setSelectedColor] = useState(null);
+    const [selectedImg , setselectedImg] = useState(false)
 
     const handleSize = (index) => {
         setSelectedSize(index)
@@ -38,7 +39,7 @@ export default function SpecialOffers() {
     }
 
     return (
-        <>
+        <div>
             <div className="bread-crumb">
                 <Link to={'/'}> خانه </Link>
                 <button className='bread-arrow' />
@@ -49,7 +50,7 @@ export default function SpecialOffers() {
 
             {productDetails?.map((product) => (
                 <div className="special-offers-container">
-                    <section className="general-info">
+                    <section  className={selectedImg ? "body" : "general-info"}>
                         <section className="purchase-info">
                             <h2 className="title">{product.title}</h2>
                             <h3 className="en-title">{product.enTitle}</h3>
@@ -67,16 +68,31 @@ export default function SpecialOffers() {
                             <div className="row">
                                 <span className='brand'>{product.brand}</span>
                                 <div className="prices">
-
+                                    <h3>{product.originalPrice}</h3>
+                                    <h2>{product.offerPrice}</h2>
+                                    <div className='offer'>
+                                    <p>
+                                   {product.percentage}%
+                                    </p>
+                                 </div>
                                 </div>
                             </div>
-                            <button className='buyingButton'> افزودن به سبد خرید </button>
-                        </section>
+                            <div className='buyingButton'>
+                            <button> افزودن به سبد خرید </button>
+                            </div>
                         <section className="more-details"></section>
+                        </section>
                     </section>
-                    <section className="image-holder"></section>
+                    <section className="image-holder">
+                        <img className={selectedImg ? "selectedImg" : "notselectedImg"} onClick={()=>{setselectedImg(true)}} onDoubleClick={()=>{setselectedImg(false)}} src={product.image} alt="" />
+                        <div className={selectedImg ? "body" : "miniImg"}>
+                            {product.images?.map((img)=>(
+                                <img key={img.id} src={img} alt="" />
+                            ))}
+                        </div>
+                    </section>
                 </div>
             ))}
-        </>
+        </div>
     )
 }

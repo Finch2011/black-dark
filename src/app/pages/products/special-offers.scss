@@ -2,6 +2,10 @@
 @use '/src/sass/base/fonts';
 @use '/src/sass/base/colors';
 
+.body{
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
 .bread-crumb {
     @include flex(row, flex-start, center);
     height: max-content;
@@ -30,25 +34,67 @@
 }
 
 .special-offers-container {
-    padding: 1rem 1.5rem;
+    padding: 1rem 2rem;
+    @include flex(row, space-around, center);
+
+    
+    .general-info {
+        @include flex(row, start, center);
+        width: 40%;
+        height: max-content;
+    }
+    .purchase-info {
+        @include flex(column, center, center);
+        gap: 1rem;
+    }
 
     & h2.title {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 
     & h3.en-title {
         font-size: 1rem;
         font-weight: 400;
     }
-    .brand{
+
+    .brand {
         font-family: fonts.$en;
         font-size: 30px;
         font-weight: 400
     }
+    .row{
+        width: 510px;
+        padding: 1rem;
+        @include flex(row , space-between , center);
+        .offer {
+            @include flex(row , center , center);
+            width: 80px;
+            height: 40px;
+            background-color: rgba(161, 168, 150, 0.615);
+            border-radius: 5px;
+            & p{
+                font-weight: 800;
+                font-size: 20px;
+                font-family: fonts.$en;
+            }
+        }
+        .prices{
+            @include flex(row , center ,center);
+            gap: 0.5rem;
+            & h3 {
+                text-decoration: line-through;
+                color: #4d4d4d;
+                font-weight: 300;
+            }
+        }
+    }
+    
+
 
     .sizes-chooser {
         @include flex(row, center, center);
-        gap: 1rem;
+
+        gap: 1.5rem;
 
         span,
         li {
@@ -81,10 +127,11 @@
     .colors-picker {
         @include flex(row, center, center);
         gap: 1rem;
-        margin: 1rem;
+        margin: 0.5rem;
         width: 100%;
         height: max-content;
         padding: 1rem;
+
 
         li {
             @include flex(row, flex-end, center);
@@ -104,21 +151,60 @@
         .selectedColor {
             @include flex(row, center, center);
             width: 128px;
-            border: 1px solid #171717;
-            color: #fff;
+            color: #4d4d4d;
+            text-shadow: 1px 1px 2px black;
         }
-        .mainClassColor{
+
+        .mainClassColor {
             border: 1px solid #171717;
             padding: 1rem;
         }
     }
-    .buyingButton{
-        width: 200px;
-        height: 50px;
+
+    .buyingButton {
+        @include flex(row, start, center);
+        margin-top: 1rem;
+        & button {
+            width: 500px;
+            height: 50px;
+            border-radius: 10px;
+            border: none;
+            background-color: colors.$primary-70;
+            font-family: fonts.$semi-bold;
+            color: #fff;
+        }
+    }
+}
+.image-holder{
+    @include flex(column,center,center);
+    gap: 10px;
+    width: 40%;
+    height: max-content;
+    .notselectedImg{
+        width:630px;
+        height: 500px;
         border-radius: 10px;
-        border: none;
-        background-color: colors.$info;
-        font-family: fonts.$semi-bold;
-        
+        cursor: pointer
+    }
+    .miniImg{
+        @include flex(row,"",center);
+        gap: 10px;
+       img{
+        width: 150px;
+        height: 150px;
+        border-radius: 10px;
+       }
+    }
+    .selectedImg{
+        position: absolute;
+        top: 10px;
+        bottom: 10px;
+        left: 350px;
+        width: 800px;
+        height: 800px;
+        border-radius: 10px;
+        z-index: 1;
+        transition: all 0.5s ease-in-out;
+        cursor: pointer;
     }
 }
