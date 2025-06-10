@@ -8,7 +8,7 @@ import { useQuery } from '@tanstack/react-query';
 
 export default function SpecialOffers() {
     const { slug } = useParams();
-
+    const [position , setPosition] =useState("info");
     const currentLocation = window.location.pathname;
     const optimizedSlug = slug.replace(/ /g, "%20");
 
@@ -24,7 +24,7 @@ export default function SpecialOffers() {
         queryFn
     })
 
-    const category = productDetails?.map((product) => product.category)
+    const category = productDetails?.map((product) => product.categories)
 
     const [selectedSize, setSelectedSize] = useState(null);
     const [selectedColor, setSelectedColor] = useState(null);
@@ -91,8 +91,56 @@ export default function SpecialOffers() {
                             ))}
                         </div>
                     </section>
+                   
                 </div>
             ))}
-        </div>
-    )
+             <div className='main-navigate'>
+                      <button onClick={()=> setPosition("commit")} className={position === "commit" ? "selected" : ""}>نظرات کاربران</button>
+                      <button onClick={()=> setPosition("discription")} className={position === "discription" ? "selected" : "" }>مشخصات</button>
+                      <button onClick={()=> setPosition("info")} className={position === "info" ? "selected" : ""}>توضیحات</button>
+                      <div>
+                       {position === "commit" ? <div> very very bad  </div> : ""}
+                       {position === "info" ? <div className='info-dit'> 
+                        <div className='text'>
+
+                        <h4>پارچه پشمی درجه یک </h4>
+                        <h4> طراحی برجسته</h4>
+                        <h4>دوخته شده با نخ بز</h4>
+                        <h4>پارچه  پشمی درجه </h4>
+                        <p>کت و شلوار مردانه شامل یک کت، یک شلوار و گاهی یک جلیقه است که از یک نوع پارچه دوخته‌شده‌اند. توجه کنید که یک شلوار و یک کت با پار‌چه‌ای مشابه به عنوان کت و شلوار شناخته نمی‌شود و حتماً باید در دوخت تمامی آیتم‌ها از یک پارچه استفاده شده باشد. امروزه مدل‌های کت و شلوار زیادی برای انتخاب وجود دارد، اما همه آن‌ها بر اساس سه سبک کلی طبقه‌بندی می‌شوند: آمریکایی، اروپایی/ایتالیایی و انگلیسی. اگرچه برخی از عناصر هر یک از این سبک‌ها مشابه سبک‌های دیگر هستند، اما همچنان به عنوان یک راهنمای مفید در تعیین اینکه کدام مدل برش برای تیپ بدنی شما مناسب‌تر است، در نظر گرفته می‌شوند.</p>
+                       </div>
+                        <img src="/assets/images/model-2.png" alt="model sign up" />
+
+                       </div> : ""}
+                       {position === "discription" ? <div className='main-table'>
+                        <table>
+                           <tbody className='info-table'>
+                            <td>
+                                <tr>جنس پارچه :</tr>
+                                <th>پنبه ابریشمی</th>
+                            </td>
+                            <td>
+                                <tr>طراحی :</tr>
+                                <th>mr. davinchi</th>
+                            </td>
+                            <td>
+                                <tr>تولید :</tr>
+                                <th>کشور ایتالیا</th>
+                            </td>
+                            <td>
+                                <tr>رنگبندی :</tr>
+                                <th>سبز و صورتی و بژ و قرمز و آبی</th>
+                            </td>
+                            <td>
+                                <tr>دیگر موارد :</tr>
+                                <th>دوخته شده از نخ بزی - رنگ طبیعی</th>
+                            </td>
+                           </tbody>
+                        </table>
+                       </div> : ""}
+                       
+                      </div>
+                    </div>
+                    </div>
+                )
 }
